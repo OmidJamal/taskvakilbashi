@@ -1,0 +1,682 @@
+@font-face {
+    font-family: iransans;
+    src: url("../fonts/IRANSans\(FaNum\)_Medium.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+    font-family: iransans;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+body{
+    position: relative;
+}
+.edit-contract-modal{
+    position: absolute;
+    background-color: #0e0d0d80;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.edit-contract-modal form{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    border-radius: 10px;
+}
+.create-contract-modal{
+    position: absolute;
+    background-color: #0e0d0d80;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    
+}
+.create-contract-modal form{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    border-radius: 10px;
+}
+.nameInput{
+    background-color: #f5f5f5;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    margin: 5px 0;
+}
+.textarea{
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    margin: 5px 0;
+    padding: 10px;
+}
+.sub-btn button{
+    margin: 10px 0;
+    padding: 10px 30px;
+    background-color: rgb(0, 162, 255);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.bg-green{
+    background-color: rgb(22, 163, 22);
+}
+.bg-gray{
+    background-color: #ccc;
+}
+.border-color-green{
+    border: 1px solid rgb(22, 163, 22);
+}
+.border-color-gray{
+    border: 1px solid #ccc;
+}
+.text-size-14{
+    font-size: 14px;
+}
+.d-felx{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+.align-center{
+    align-items: center;
+}
+#header{
+    padding: 15px 0 10px 0;
+    
+}
+
+#navBar{
+    display: flex;
+    position: relative;
+    /* background-color: yellow; */
+    align-items: center;
+    padding: 20px;
+}
+
+.logo{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.nav-ul{
+    display: flex;
+    margin-right: 30px;
+}
+
+.nav-ul > li{
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.nav-ul a{
+    color: #222;
+    font-size: 18px;
+}
+
+.nav-ul a:hover{
+    color: rgb(22, 163, 22);
+}
+
+.navBtn{
+    border: none;
+    background-color: transparent;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+.navBtn svg{
+    width: 30px;
+    height: 30px;
+}
+
+#main{
+    height: 100%;
+    background-color: #eee;
+    padding: 20px 0;
+}
+
+.main-container{
+    width: 70%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.tabs{
+    display: flex;
+    align-items: center;
+    /* background: yellow; */
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+}
+
+.b-cycle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin: 0 2px;
+}
+.m-cycle{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.min-line{
+    height: 2px;
+    width: 14%;
+    border-radius: 2px;
+}
+
+.tab-content{
+    /* background-color: yellow; */
+    padding: 40px 10px;
+}
+.contract-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contract-title{
+    display: flex;
+    align-items: center;
+}
+.title-num{
+    background-color: rgb(255, 230, 0);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 25px;
+}
+.title-detail{
+    margin: 0 10px;
+    font-size: 25px;
+}
+
+.add-contract button{
+    background-color: rgb(255, 230, 0);
+    border: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.contract-details{
+    padding: 20px 0;
+}
+.contract-ul{
+    height: 500px;
+    overflow-y: auto;
+}
+.contract-ul::-webkit-scrollbar {
+    width: 0;
+  }
+  
+.contract-ul li{
+    border: 1px solid rgb(0, 162, 255);
+    padding: 25px 15px;
+    border-radius: 10px;
+    position: relative;
+    background-color: #f2efff;
+    margin: 20px 0;
+    cursor: pointer;
+    text-align: justify;
+}
+.contract-ul li svg{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    cursor: pointer;
+    fill: rgb(0, 162, 255);
+}
+.contract-ul li svg.delete{
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+    cursor: pointer;
+    fill: rgb(0, 162, 255);
+}
+.next-step button{
+    margin-top: 10px;
+    border: none;
+    background-color: rgb(0, 162, 255);
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#footer{
+    display: none;
+}
+@media screen and (max-width: 600px) {
+    .text-size-12{
+        font-size: 12px;
+    }
+    #navBar{
+        flex-direction: column;
+        align-items: start;
+    }
+    .nav-ul{
+        flex-direction: column;
+        margin-right: 0;
+        margin-top: 10px;
+        background: yellow;
+        width: 100%;
+        /* height: 120px; */
+        height: 0;
+        overflow: hidden;
+    }
+    .nav-ul li{
+        border-bottom: 1px solid rgb(22, 163, 22);
+    
+    }
+    .navBtn{
+        display: flex;
+    }
+
+    .main-container{
+        width: 95%;
+        padding: 10px;
+    }
+    .tabs{
+        width: 100%;
+    }
+    .b-cycle{
+        width: 35px;
+        height: 35px;
+    }
+    .m-cycle{
+        margin-bottom: 40px;
+    }
+    .tab-content{
+        padding: 20px 5px;
+    }
+    .title-num{
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+    }
+    .title-detail{
+        font-size: 16px;
+    }
+    .contract-header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .add-contract button{
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .contract-details{
+        padding: 10px 0;
+    }
+    .contract-ul{
+        height: 270px;
+    }
+    #footer{
+        padding: 15px 0;
+        display: block;
+    }
+    .footer-container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .items{
+        text-align: center;
+    }
+    .items a{
+        color: #222;
+    }
+    .items a svg{
+        fill: #222;
+    }
+    .edit-contract-modal form{
+        width: 95%;
+    }
+    .create-contract-modal form{
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+    .text-size-12{
+        font-size: 12px;
+    }
+    #navBar{
+        flex-direction: column;
+        align-items: start;
+    }
+    .nav-ul{
+        flex-direction: column;
+        margin-right: 0;
+        margin-top: 10px;
+        background: yellow;
+        width: 100%;
+        /* height: 120px; */
+        height: 0;
+        overflow: hidden;
+    }
+    .nav-ul li{
+        border-bottom: 1px solid rgb(22, 163, 22);
+    
+    }
+    .navBtn{
+        display: flex;
+    }
+
+    .main-container{
+        width: 95%;
+        padding: 10px;
+    }
+    .tabs{
+        width: 100%;
+    }
+    .b-cycle{
+        width: 35px;
+        height: 35px;
+    }
+    .m-cycle{
+        margin-bottom: 20px;
+    }
+    .tab-content{
+        padding: 20px 5px;
+    }
+    .title-num{
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+    }
+    .title-detail{
+        font-size: 16px;
+    }
+    .contract-header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .add-contract button{
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .contract-details{
+        padding: 10px 0;
+    }
+    .contract-ul{
+        height: 270px;
+    }
+    #footer{
+        padding: 15px 0;
+        display: block;
+    }
+    .footer-container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .items{
+        text-align: center;
+    }
+    .items a{
+        color: #222;
+    }
+    .items a svg{
+        fill: #222;
+    }
+    .edit-contract-modal form{
+        width: 95%;
+    }
+    .create-contract-modal form{
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .text-size-12{
+        font-size: 12px;
+    }
+    #navBar{
+        flex-direction: column;
+        align-items: start;
+    }
+    .nav-ul{
+        flex-direction: column;
+        margin-right: 0;
+        margin-top: 10px;
+        background: yellow;
+        width: 100%;
+        /* height: 120px; */
+        height: 0;
+        overflow: hidden;
+    }
+    .nav-ul li{
+        border-bottom: 1px solid rgb(22, 163, 22);
+    
+    }
+    .navBtn{
+        display: flex;
+    }
+
+    .main-container{
+        width: 95%;
+        padding: 10px;
+    }
+    .tabs{
+        width: 100%;
+    }
+    .b-cycle{
+        width: 35px;
+        height: 35px;
+    }
+    .m-cycle{
+        margin-bottom: 20px;
+    }
+    .tab-content{
+        padding: 20px 5px;
+    }
+    .title-num{
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+    }
+    .title-detail{
+        font-size: 16px;
+    }
+    .contract-header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .add-contract button{
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .contract-details{
+        padding: 10px 0;
+    }
+    .contract-ul{
+        height: 270px;
+    }
+    #footer{
+        padding: 15px 0;
+        display: block;
+    }
+    .footer-container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .items{
+        text-align: center;
+    }
+    .items a{
+        color: #222;
+    }
+    .items a svg{
+        fill: #222;
+    }
+    .edit-contract-modal form{
+        width: 95%;
+    }
+    .create-contract-modal form{
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .text-size-12{
+        font-size: 12px;
+    }
+    #navBar{
+        flex-direction: column;
+        align-items: start;
+    }
+    .nav-ul{
+        flex-direction: column;
+        margin-right: 0;
+        margin-top: 10px;
+        background: yellow;
+        width: 100%;
+        /* height: 120px; */
+        height: 0;
+        overflow: hidden;
+    }
+    .nav-ul li{
+        border-bottom: 1px solid rgb(22, 163, 22);
+    
+    }
+    .navBtn{
+        display: flex;
+    }
+
+    .main-container{
+        width: 80%;
+        padding: 10px;
+    }
+    .tabs{
+        width: 100%;
+    }
+    .b-cycle{
+        width: 35px;
+        height: 35px;
+    }
+    .m-cycle{
+        margin-bottom: 20px;
+    }
+    .tab-content{
+        padding: 20px 5px;
+    }
+    .title-num{
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+    }
+    .title-detail{
+        font-size: 16px;
+    }
+    /* .contract-header{
+        flex-direction: column;
+        align-items: flex-start;
+    } */
+    .add-contract button{
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .contract-details{
+        padding: 10px 0;
+    }
+    .contract-ul{
+        height: 300px;
+    }
+    #footer{
+        padding: 15px 0;
+        display: block;
+    }
+    .footer-container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .items{
+        text-align: center;
+    }
+    .items a{
+        color: #222;
+    }
+    .items a svg{
+        fill: #222;
+    }
+    .edit-contract-modal form{
+        width: 95%;
+    }
+    .create-contract-modal form{
+        width: 95%;
+    }
+}
+
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .tabs{
+        width: 100%;
+    }
+    .contract-ul{
+        height: 350px;
+    }
+}
+
+
+@media screen and (min-width: 1400px) and (max-width: 1600px) {
+    .tabs{
+        width: 100%;
+    }
+    .contract-ul{
+        height: 350px;
+    }
+}
+
+@media screen and (min-width: 1600px) and (max-width: 1900px) {
+    .tabs{
+        width: 100%;
+    }
+    .contract-ul{
+        height: 350px;
+    }
+}
